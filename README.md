@@ -1,3 +1,5 @@
+# microframe-ts
+microframe-ts can be installed via `npm install --save microframe-ts`.
 # Api
 ### ApiManager
 The ApiManager handles the Express Application and all of the registered controllers.
@@ -11,7 +13,7 @@ The `NewApiRequestEvent` is published to the EventAggregator when a Api request 
 ### EventAggregator
 The EventAggregator aggregates published events to subscribed handlers. The EventAggregator singleton can be accessed via the `UseEventAggregator` function.
 #### Usage
-The EventAggregator works best when used with Dependecy Injection. Below is an example of getting the EventAggregator singleton, then registering the singleton with a `typedi` container.
+The EventAggregator works best when used with Dependency Injection. Below is an example of getting the EventAggregator singleton, then registering the singleton with a `typedi` container.
 ```typescript
 const eventAggregator = UseEventAggregator();
 Container.set(EventAggregator, eventAggregator);
@@ -28,7 +30,7 @@ export default class ArticleService {
 ```
 # Creating a Microservice
 ### Setup
-First thing to do is setup the Depenecy Injection for the service, `typedi` works well with `microframe-ts` but any Dependecy Injection package should work (setup for typedi can be found [here](https://github.com/typestack/typedi). 
+First thing to do is setup the Depenency Injection for the service, `typedi` works well with `microframe-ts` but any Dependency Injection package should work (setup for typedi can be found [here](https://github.com/typestack/typedi). 
 Start by registering any packages outside your project with the `typedi` container, example below shows the `microframe-ts` ApiManager being registered with the container.
 ```typescript
 Container.set(ApiManager, apiManager);
