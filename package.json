@@ -1,6 +1,6 @@
 {
   "name": "microframe-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Typescript framework for creating microservices.",
   "keywords": [
     "microservice",
