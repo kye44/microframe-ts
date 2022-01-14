@@ -1,6 +1,6 @@
 {
   "name": "microframe-ts",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.1",
   "description": "Typescript framework for creating microservices.",
   "keywords": [
     "microservice",
@@ -25,6 +25,7 @@
     "event-ag": "^1.0.4",
     "express": "^4.17.2",
     "simple-konfig": "^1.0.6",
+    "tslog": "^3.3.1",
     "typedi": "^0.10.0"
   }
 }

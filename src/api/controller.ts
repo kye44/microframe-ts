@@ -1,5 +1,6 @@
 import * as Express from 'express';
 import { Request } from 'express';
+import { UseLogger } from '..';
 import { NewApiRequestEvent } from '../event/api';
 import { UseEventAggregator } from '../singleton';
 /** 
@@ -39,6 +40,7 @@ export class BaseController implements IController {
         this.routes = [];
         this.router = Express.Router();
         this.InitRoutes();
+        UseLogger().debug(`Routes registered - ${this.routes}`);
     }
 
     protected InitRoutes() { }

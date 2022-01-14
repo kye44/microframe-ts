@@ -16,6 +16,11 @@ import {
     NewApiRequestEvent
 } from './event';
 
+import {
+    Logger,
+    UseLogger
+} from './log';
+
 export {
     ApiManager,
     IController,
@@ -25,5 +30,7 @@ export {
     UseEventAggregator,
     EventAggregator,
     PubSubBase,
-    NewApiRequestEvent
+    NewApiRequestEvent,
+    Logger,
+    UseLogger
 };
