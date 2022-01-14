@@ -74,4 +74,24 @@ Finally call the `Listen` method on the `ApiManager`.
  Container.set(ApiManager, apiManager);
  apiManager.Listen();
 ```
+
+### Logger
+`microframe-ts` uses the package `tslog` for logging, more information on `tslog` can be found [here](https://github.com/fullstack-build/tslog). In order to use the `Logger` throughout the microservice, register the `Logger` with the DI container using `UseLogger` to get the `Logger` singleton; as shown below.
+```Typescript
+const logger = UseLogger();
+Container.set(Logger, logger);
+```
+The `Logger` can then be injected in services as so.
+```Typescript
+@Service()
+class ExampleService {
+    private readonly logger: Logger;
+    
+    constructor(logger: Logger) {
+        this.logger = logger;
+        this.logger.info('Hello World');
+    }
+}
+```
+
 Information on Microservice architecture can be found [here](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices).
