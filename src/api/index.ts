@@ -2,6 +2,7 @@ import { Application, urlencoded, json } from 'express';
 import * as express from 'express';
 import { IController } from './controller';
 import { Logger, UseLogger } from '../log';
+import * as cors from 'cors';
 
 /**
  * Manages an Express Application, and API Controllers.
@@ -40,6 +41,7 @@ export class ApiManager {
     private InitMiddleware(): void {
         this.app.use(urlencoded({ extended: true }));
         this.app.use(json({ verify: (req: any, _, buf) => { req.rawBody = buf } }));
+        this.app.use(cors());
     }
 
     private InitControllers(): void {

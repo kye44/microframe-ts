@@ -1,5 +1,5 @@
 import * as Express from 'express';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 import { UseLogger } from '..';
 import { NewApiRequestEvent } from '../event/api';
 import { UseEventAggregator } from '../singleton';
@@ -71,7 +71,8 @@ export class BaseController implements IController {
     }
 }
 
-const publishNewApiRequestEvent = (request: Request) => {
+const publishNewApiRequestEvent = (request: Request, _: Response, next: any) => {
     const eventAggregator = UseEventAggregator();
     eventAggregator.GetEvent(NewApiRequestEvent).Publish({ Request: request } as NewApiRequestEvent);
+    next();
 }
